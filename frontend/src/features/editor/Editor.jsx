@@ -2,7 +2,7 @@
 
 import {useState, useEffect} from 'react';
 import { plainTextToHtml,normalizeHtml } from '../../utils/contentNormalizer.js';
-
+import './editor.css';
 export default function Editor(){
 
     const [rawText, setRawText] = useState('');
@@ -20,7 +20,6 @@ export default function Editor(){
     }
 
 
-
 //Pasamos el texto por nuestra capa  de integridad (clean code)
   
     const handleSave = () => {
@@ -30,10 +29,11 @@ export default function Editor(){
 
 
     return(
-        <div style={{ maxWidth: '900px', margin: '2rem auto', padding: '0 2rem' }}>
-            <h2>Escribir un nuevo artículo</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '1rem' }}>
-                <div>
+        <div className="editor-container">
+            <h2 className="editor-title">Escribir un nuevo artículo</h2>
+            <div className="editor-grid">
+                <div className="editor-pane">
+                    <h3>Editor de texto</h3>
                     <textarea
                     value={rawText}
                     onChange={handleInputChange}
@@ -46,8 +46,7 @@ export default function Editor(){
 
             <button
                 onClick={handleSave}
-                style={{marginTop: '2rem', padding: '0.8rem 2rem', backgroundColor: '#315a84', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer'}}
-            >
+                className='btn-save-article'>
                 Guardar articulo
 
             </button>

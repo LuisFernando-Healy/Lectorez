@@ -1,0 +1,77 @@
+/* frontend/src/features/editor/Editor.css */
+
+.editor-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  color: #333;
+}
+
+.editor-title {
+  font-size: 1.8rem;
+  color: #2c2b2b;
+  margin-bottom: 0.5rem;
+}
+
+.editor-subtitle {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.editor-pane h3 {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.editor-textarea {
+ 
+  margin-Left:'20px';
+  width:'800px';
+  height:'300px';
+  padding:'1rem';
+  border-Radius:'8px';
+  background-Color:'#e6eef1';
+  color: '#000000'; 
+  border: '1px solid #444'
+}
+
+.editor-preview {
+  width: 100%;
+  height: 300px;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #333;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.editor-preview-placeholder {
+  color: #666;
+}
+
+.btn-save-article {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background-color: #ff9100ea;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-save-article:hover {
+  background-color: #e08b26;
+}

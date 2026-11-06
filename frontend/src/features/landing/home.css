@@ -1,0 +1,258 @@
+/* frontend/src/features/landing/Home.css */
+
+.home-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================
+   FEED CENTRAL (HISTORIAS Y RETOS)
+   ========================================= */
+.home-feed {
+  flex: 1;
+  padding: 2.5rem 4rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.home-feed::-webkit-scrollbar { display: none; }
+
+.section-title {
+  color: #352f2fdc;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Historias */
+.stories-carousel {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  scrollbar-width: none;
+}
+.stories-carousel::-webkit-scrollbar { display: none; }
+
+.story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+}
+
+.story-ring {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.story-ring.user { background: #ddd; }
+.story-ring.active { background: linear-gradient(45deg, #ffb700, #ffd000); }
+
+.story-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.story-name {
+  font-size: 0.75rem;
+  margin-top: 5px;
+  color: #555;
+}
+
+/* Retos (Challenges) */
+.challenge-label {
+  color: #ff9100;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.challenge-title {
+  color: #2c2b2b;
+  font-size: 2.3rem;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.2;
+}
+
+.challenge-desc {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+  max-width: 650px;
+}
+
+.challenge-stats {
+  text-align: center;
+  padding-left: 2rem;
+}
+
+.stats-number {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #2c2b2b;
+}
+
+.stats-text {
+  font-size: 0.75rem;
+  color: #666;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 5px 0 0 0;
+}
+
+.challenge-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 350px;
+  margin-bottom: 2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url("https://picsum.photos/800/400?nature") center/cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.card-tag {
+  font-size: 0.85rem;
+  color: #fcac2c;
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.card-desc {
+  max-width: 600px;
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  text-align: justify;
+}
+
+.card-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn-primary {
+  padding: 0.8rem 1.5rem;
+  border-radius: 40px;
+  border: none;
+  background-color: #ff9100ea;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-outline {
+  padding: 0.8rem 1.5rem;
+  border-radius: 40px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* =========================================
+   PANEL DERECHO (ACTIVIDAD)
+   ========================================= */
+.activity-panel {
+  width: 320px;
+  padding: 2rem 1.5rem;
+  background-color: #f9f9f9;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.activity-panel::-webkit-scrollbar { display: none; }
+
+.btn-block {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ff9100d8;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+
+}
+
+.widget-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+}
+
+.widget-title {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.progress-track {
+  margin-top: 1rem;
+  height: 4px;
+  background-color: #eee;
+  border-radius: 2px;
+  position: relative;
+}
+
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 99%;
+  background-color: #fcac2c;
+  border-radius: 2px;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activity-item {
+  display: flex;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.activity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fcac2c;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
