@@ -1,0 +1,155 @@
+/* frontend/src/features/groups/ReadingGroups.css */
+
+.groups-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 1.5rem;
+}
+
+.group-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.group-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.group-topic-badge {
+    display: inline-block;
+    background-color: #fff3e0;
+    color: #e67e22;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+}
+
+.group-name {
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin: 0 0 0.5rem 0;
+    text-align: justify;
+}
+
+.group-desc {
+    font-size: 0.8rem;
+    color: #6b7280;
+    line-height: 1.5;
+    margin: 0 0 1.5rem 0;
+    text-align: justify;
+}
+
+.group-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 1rem;
+}
+
+.group-members {
+    font-size: 0.85rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.btn-join {
+    background-color: #f99d2c;
+    color: #ffffff;
+    border: none;
+    padding: 0.45rem 1.1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-join:hover {
+    background-color: #e08b26;
+}
+
+.btn-join.joined {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.btn-join.joined:hover {
+    background-color: #d1d5db;
+}
+
+/* Modal Claro coherente con tu diseño de Universos */
+.modal-light-content {
+    background-color: #f4f4f2;
+    padding: 2.2rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    color: #2c2b2b;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-light-title {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.light-input, .light-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #9ca3af;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #1f2937;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.light-textarea {
+    height: 95px;
+    resize: vertical;
+}
+
+.modal-light-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-light-cancel {
+    background: transparent;
+    border: 1px solid #6b7280;
+    color: #374151;
+    padding: 0.6rem 1.4rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-light-submit {
+    background-color: #333131;
+    border: none;
+    color: #ffffff;
+    padding: 0.6rem 1.6rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+}

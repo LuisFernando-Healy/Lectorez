@@ -11,8 +11,8 @@ export default function Home() {
     ]);
 
     const [actividad] = useState([
-        { id: 1, usuario: '@diabloescritor', accion: 'publicó un librox', tiempo: 'hace 18 min' },
-        { id: 2, usuario: '@diabloescritor', accion: 'creó un Universo', tiempo: 'hace 30 min' },
+        { id: 1, usuario: '@TheBEST', accion: 'publicó un librox', tiempo: 'hace 18 min' },
+        { id: 2, usuario: '@GOAT', accion: 'creó un Universo', tiempo: 'hace 30 min' },
         { id: 3, usuario: '@Mcarmen', accion: 'publicó un librox', tiempo: 'hace 44 min' },
     ]);
 

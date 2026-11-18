@@ -1,9 +1,11 @@
 
 import Home from './features/landing/home.jsx'
 import Editor from './features/editor/editor.jsx'
-import { useState } from 'react';
+import Universes from './features/universes/Universes.jsx';
+import Biblioteca from './features/Library/Biblioteca.jsx';
+import ReadingGroups from './features/grupos/ReadingGroups.jsx';
 import { BrowserRouter,Link,Routes,Route, } from 'react-router-dom';
-import Grupos from './features/grupos/grupos.jsx';
+
 import './App.css'
 
 function App() {
@@ -58,7 +60,10 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/Editor" element={<Editor />} />
-                    <Route path="/grupos" element={<Grupos />} />  
+                    <Route path="/grupos" element={<ReadingGroups />} />  
+                    <Route path='/universos' element={<Universes/>}/>
+                    <Route path='/biblioteca' element={<Biblioteca/>} />
+
                 </Routes>
             </div>
            
