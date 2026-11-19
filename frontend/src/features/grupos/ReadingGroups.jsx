@@ -53,9 +53,10 @@ export default function ReadingGroups(){
     const handleCreateGroup = () => {
         if(!newName.trim() || !newTopic.trim()){
             alert("El nombre del grupo y la tematica son obligatorios")
+            return;
         }
 
-        const createDateGroup ={
+        const createDateGroup = {
             id:Date.now(),
             name:newName,
             topic:newDesc,
@@ -63,7 +64,7 @@ export default function ReadingGroups(){
             isJoined:true
         }
 
-        setGroups([...createDateGroup,groups])
+        setGroups([createDateGroup,...groups])
         setNewName('');
         setNewDesc('');
         setNewTopic('');

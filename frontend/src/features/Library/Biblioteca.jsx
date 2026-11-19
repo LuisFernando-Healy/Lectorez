@@ -24,7 +24,7 @@ export default function Biblioteca () {
                     }
 
                     const resUniverses = await fetch('http://localhost:5000/api/universes');
-                    if(resArticles.ok){
+                    if(resUniverses.ok){
                        const dataUniverses = await resUniverses.json() 
                         setUniverses(Array.isArray(dataUniverses)?dataUniverses : dataUniverses.data || []);
                     
