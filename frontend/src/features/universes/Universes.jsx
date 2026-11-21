@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './Universes.css';
 
 export default function Universes (){
@@ -12,7 +12,37 @@ export default function Universes (){
 
     const [loading,setLoading] =useState(false)
 
+    const [fetching,setFetching]=useState(false);
+   
 
+ useEffect(()=>{
+
+        const fetchUniverses = async()=>{
+
+            try {
+                setFetching(true);
+                const response = await fetch('http://localhost:5000/api/universes');
+                const result = await response.json()
+                if(response.ok && result.success){
+                    setUniverses(Array.isArray(result) ? result : (result.data || []))
+                }
+                
+
+            } catch (error) {
+                console.log('Error al cargar los universos')
+                alert('Error al cargar los universos')
+                
+            } finally{
+                setFetching(false)
+            }
+        }
+        fetchUniverses()
+
+
+    },[])
+
+
+   
 
 
     const handleSaveUniverse = async () => {
@@ -41,6 +71,12 @@ export default function Universes (){
                 },
                 body: JSON.stringify(payload)
             });
+
+            if(!response.ok &&  !response.success){
+                alert(`Error del servidor ${result.message || 'no se pudo crear el universo'}`)
+                return;
+
+            }
 
             const newUniverse = {
                 id: Date.now(), 
@@ -88,24 +124,46 @@ export default function Universes (){
 
             {/*Area de contenido*/}
             <div className="View-content">
-                {/**/}
+                
 
-               {universes.length === 0 ? (
+               { fetching ? (
+                <div className="loading-state"> cargando universos 
+                </div>
+               ) : universes.length === 0 ? (
                     <div className="empty-state">
                         <div className="empty-icon">🪐</div>
                         <h2> Aun no has creado nigun universo </h2>
                         <p> Los universos te permiten agrupar historias que comparten los mismos personajes, lugares o reglas </p>
-
+                        <button
+                            className="btn-primary"
+                            style={{ marginTop: '1.5rem' }}
+                            onClick={() => setIsmodalOpen(true)}
+                        >
+                            Crear universos
+                        </button>
                     </div>
                 ) : (
                    <div className="grid-list">
                         <h3>Tus universos creados:</h3>
-                        {/* Imprimimos la lista visualmente */}
-                        <ul>
-                            {universes.map(u => (
-                                <li key={u.id}><strong>{u.name}</strong> - {u.Genre}</li>
+                        <div className="universes-grid">
+                            {universes.map((u) => (
+                                <article key={u.id} className="universe-card">
+                                    <div>
+                                        <span className="universe-genre-badge">{u.genre || 'General'}</span>
+                                        <h3 className="universe-card-title">{u.name}</h3>
+                                        <p className="universe-card-desc">
+                                            {u.description || 'Sin descripción narrativa definida aún.'}
+                                        </p>
+                                    </div>
+
+                                    <div className="universe-card-footer">
+                                        <span className="universe-author">Por {u.author || '@Jess'}</span>
+                                        <button className="btn-explore-universe">Administrar</button>
+                                    </div>
+                                </article>
                             ))}
-                        </ul>
+                        </div>
+
                     </div>
                 )}
 
@@ -113,7 +171,6 @@ export default function Universes (){
                 <br />
                 <br />
 
-        <button className="btn-primary" style={{marginTop :'1rem'}} onClick={()=> setIsmodalOpen(true)}> Crear universos</button>
 
                 {/*renderizado de modal si es true se dibuja si es falso lo ignora*/}
 
@@ -175,9 +232,16 @@ export default function Universes (){
                                     <span className="file-helper">Formato panorámico 2:1 recomendado para las tarjetas.</span>
                                 </div>
 
-                                <div>
-                                    <button className="btn-dark-cancel" onClick={()=> setIsmodalOpen(false)}> cancelar </button>
-                                    <button className="btn-dark-submit" onClick={ handleSaveUniverse}> {loading?'Guardando..':'Guardar'} </button>
+                                <div className="modal-light-buttons">
+                                    <button 
+                                    className="btn-dark-cancel"
+                                    onClick={()=> setIsmodalOpen(false)}> 
+                                    cancelar 
+                                    </button>
+                                    <button className="btn-dark-submit"
+                                     onClick={ handleSaveUniverse}>
+                                     {loading?'Guardando..':'Guardar'}
+                                    </button>
                                 </div>
 
                             </div>

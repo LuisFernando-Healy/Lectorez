@@ -30,7 +30,7 @@ export default function ReadingGroups(){
 
 
 
-    {/*actualizar un solo objeto dentro de un arreglo*/}
+    
 
 
     const handleToggleJoin = (groupId) => {
@@ -109,8 +109,6 @@ export default function ReadingGroups(){
                     ))}
                 </div>
 
-
-                
 
                 {isModalOpen && (
                 <div className="modal-overlay">

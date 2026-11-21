@@ -5,6 +5,7 @@ import Universes from './features/universes/Universes.jsx';
 import Biblioteca from './features/Library/Biblioteca.jsx';
 import ReadingGroups from './features/grupos/ReadingGroups.jsx';
 import { BrowserRouter,Link,Routes,Route, } from 'react-router-dom';
+import Challenge from './features/challenges/Challenge.jsx';
 
 import './App.css'
 
@@ -63,6 +64,7 @@ function App() {
                     <Route path="/grupos" element={<ReadingGroups />} />  
                     <Route path='/universos' element={<Universes/>}/>
                     <Route path='/biblioteca' element={<Biblioteca/>} />
+                    <Route path='/challenges' element={<Challenge/>}/>
 
                 </Routes>
             </div>
